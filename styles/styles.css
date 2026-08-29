@@ -4,9 +4,17 @@
    Tipografia: Poppins (titulos) / Inter (cuerpo)
    ========================================================= */
 
+/* =========================================================
+   Entregable 3: reset y box model
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* -------- Estilos generales -------- */
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
   color: #2c2438;
   background-color: #f6f4fb;
@@ -21,18 +29,22 @@ h1, h2, h3 {
 
 h1 {
   font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
   font-size: 1.6rem;
+  margin-bottom: 0.75rem;
 }
 
 h3 {
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
   font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 a {
@@ -40,26 +52,30 @@ a {
   text-decoration: none;
 }
 
-/* -------- Header y navegacion -------- */
+/* -------- Header y navegacion --------
+   Entregable 3: navbar con Flexbox (logo y links en extremos opuestos) */
 .site-header {
   background-color: #1f1435;
   color: #ffffff;
   padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .logo {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 0.75rem 0;
 }
 
 .nav-list {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 1.25rem;
-  padding: 0;
-  margin: 0;
   flex-wrap: wrap;
 }
 
@@ -72,10 +88,11 @@ a {
   color: #ffffff;
 }
 
-/* -------- Contenido principal -------- */
+/* -------- Contenido principal --------
+   Entregable 3: espaciado con box model (padding minimo 20px, margin entre secciones) */
 .section {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem auto;
   padding: 2rem 1.5rem;
 }
 
@@ -96,7 +113,7 @@ a {
   background-color: #ffffff;
   border: 1px solid #e3ddf2;
   border-radius: 8px;
-  padding: 1.25rem;
+  padding: 20px;
   margin-bottom: 1.5rem;
 }
 
