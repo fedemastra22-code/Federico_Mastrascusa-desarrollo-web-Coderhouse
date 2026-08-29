@@ -24,15 +24,19 @@ a {
   grid-template-areas:
     "hero"
     "quienes"
+    "problema"
     "servicios"
+    "industrias"
     "trabajo";
   gap: 1rem;
 }
 
-.area-hero      { grid-area: hero; }
-.area-quienes   { grid-area: quienes; }
-.area-servicios { grid-area: servicios; }
-.area-trabajo   { grid-area: trabajo; }
+.area-hero       { grid-area: hero; }
+.area-quienes    { grid-area: quienes; }
+.area-problema   { grid-area: problema; }
+.area-servicios  { grid-area: servicios; }
+.area-industrias { grid-area: industrias; }
+.area-trabajo    { grid-area: trabajo; }
 
 .team-grid {
   display: grid;
@@ -53,7 +57,8 @@ a {
   .page-grid {
     grid-template-areas:
       "hero hero"
-      "quienes servicios"
+      "quienes problema"
+      "servicios industrias"
       "trabajo trabajo";
     grid-template-columns: 1fr 1fr;
   }
@@ -73,6 +78,10 @@ a {
 
 .hero {
   background-color: #ffffff;
+}
+
+.hero-banner {
+  margin-bottom: 1.25rem;
 }
 
 .highlight-list {
