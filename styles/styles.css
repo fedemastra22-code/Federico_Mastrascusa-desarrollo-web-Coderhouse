@@ -91,7 +91,47 @@ a {
 }
 
 .hero {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../assets/mendoza-tupungato.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
+.hero {
+  border-radius: 8px;
+}
+
+.area-problema {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../assets/mendoza.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  .area-problema {
+    background-attachment: scroll;
+  }
+}
+.area-problema {
+  border-radius: 8px;
+}
+
+.area-alcance {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../assets/mendoza-potrerillos.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  .area-alcance {
+    background-attachment: scroll;
+  }
+}
+.area-alcance {
   border-radius: 8px;
 }
 

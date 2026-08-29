@@ -1,4 +1,5 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 * {
   margin: 0;
@@ -85,8 +86,21 @@ a {
   padding: 2.5rem 1.5rem;
 }
 
+// fotos de Mendoza de fondo (mza, potrerillos y tupungato), donde nacio
+// el emprendimiento. uso el mixin fondo-imagen para no repetir el mismo
+// bloque 3 veces
 .hero {
-  background-color: rgba(255, 255, 255, 0.6);
+  @include fondo-imagen('../assets/mendoza-tupungato.jpg');
+  border-radius: $radio-borde;
+}
+
+.area-problema {
+  @include fondo-imagen('../assets/mendoza.jpg');
+  border-radius: $radio-borde;
+}
+
+.area-alcance {
+  @include fondo-imagen('../assets/mendoza-potrerillos.jpg');
   border-radius: $radio-borde;
 }
 

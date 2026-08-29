@@ -2,3 +2,17 @@
 @mixin transicion($propiedad: all, $duracion: 0.2s) {
   transition: $propiedad $duracion ease;
 }
+
+// mixin con parametros para poner una foto de fondo con velo claro encima
+// (asi el texto se sigue leyendo bien arriba de la imagen)
+@mixin fondo-imagen($imagen, $velo: rgba(255, 255, 255, 0.85)) {
+  background-image: linear-gradient($velo, $velo), url($imagen);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  // en mobile el fixed a veces tira raro, mejor scroll normal
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+  }
+}
