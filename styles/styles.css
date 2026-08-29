@@ -53,16 +53,11 @@ a {
 }
 
 /* -------- Header y navegacion --------
-   Entregable 3: navbar con Flexbox (logo y links en extremos opuestos) */
-.site-header {
+   Entregable 5: la navbar de Bootstrap trae su propio Flexbox interno,
+   aca solo la personalizamos con la paleta propia del sitio */
+.site-header .navbar {
   background-color: #1f1435;
-  color: #ffffff;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  padding: 0.75rem 0;
 }
 
 .logo {
@@ -71,21 +66,28 @@ a {
   color: #ffffff;
 }
 
-.nav-list {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.nav-link {
+/* Entregable 5: estados interactivos (hover, focus, active) con transicion */
+.site-header .nav-list .nav-link {
   color: #d9cff0;
   font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
 }
 
-.nav-link:hover {
+.site-header .nav-list .nav-link:hover {
   color: #ffffff;
+  background-color: rgba(139, 111, 209, 0.15);
+}
+
+.site-header .nav-list .nav-link:focus {
+  outline: 2px solid #8b6fd1;
+  outline-offset: 2px;
+}
+
+.site-header .nav-list .nav-link:active {
+  color: #ffffff;
+  background-color: rgba(139, 111, 209, 0.3);
 }
 
 /* -------- Contenido principal --------
@@ -115,6 +117,13 @@ a {
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Entregable 5: estado interactivo en las tarjetas de servicios/proyectos */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(91, 58, 153, 0.15);
 }
 
 /* -------- Imagenes -------- */
@@ -158,10 +167,21 @@ a {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover {
   background-color: #472c78;
+}
+
+.btn:focus {
+  outline: 2px solid #8b6fd1;
+  outline-offset: 2px;
+}
+
+.btn:active {
+  background-color: #362060;
+  transform: scale(0.98);
 }
 
 /* =========================================================
