@@ -212,21 +212,6 @@ p {
   box-shadow: 0 8px 20px rgba(91, 58, 153, 0.15);
 }
 
-.avatar-placeholder {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  background-color: #5b3a99;
-  color: #ffffff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.75rem;
-}
-
 .contact-form {
   max-width: 420px;
 }
