@@ -4,6 +4,8 @@ Sitio web tipo landing/portfolio para M&G Studio 360, un estudio de consultoria
 y desarrollo de software a medida. Proyecto realizado como entregable del curso
 de Desarrollo Web Flex.
 
+**Autor:** Federico Mastrascusa
+
 ## Tecnologias usadas
 - HTML5 semantico
 - CSS3 / SCSS (Sass)
