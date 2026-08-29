@@ -1,27 +1,34 @@
 @use '../utilities/variables' as *;
 
+// tipografia grande y con tracking negativo prolija, usando clamp()
+// para que escale solo sin necesitar mas media queries
 h1, h2, h3 {
   font-family: $fuente-titulos;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   color: $color-secundario;
 }
 
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
+  font-size: clamp(2.4rem, 5vw + 1rem, 4.2rem);
+  margin-bottom: 1.25rem;
 }
 
 h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.75rem;
+  font-size: clamp(1.8rem, 3vw + 1rem, 2.75rem);
+  margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem);
+  letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
 }
 
 p {
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.4vw + 0.95rem, 1.15rem);
+  font-weight: 400;
+  color: $color-texto-suave;
   margin-bottom: 0.5rem;
 }

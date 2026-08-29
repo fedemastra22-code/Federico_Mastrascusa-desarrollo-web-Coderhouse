@@ -48,18 +48,20 @@
   <!-- Entregable 4: main como grid container (mobile-first, areas nombradas) -->
   <main class="page-grid">
     <!-- Entregable 1: seccion de presentacion -->
-    <section class="section hero area-hero">
-      <figure class="media-figure hero-banner">
-        <img src="assets/hero-mg-studio360.jpg" alt="Banner M&amp;G Studio 360, redefiniendo la experiencia digital con soluciones inmersivas">
-      </figure>
-      <h1 class="hero-title">Tome el control de la rentabilidad de su negocio</h1>
-      <p>Somos un estudio de consultoria y desarrollo de software a medida. Ayudamos a pymes en crecimiento a dejar de decidir por intuicion y a empezar a decidir con datos reales.</p>
+    <section class="hero-full area-hero">
+      <div class="section-inner">
+        <figure class="media-figure hero-banner">
+          <img src="assets/hero-mg-studio360.jpg" alt="Banner M&amp;G Studio 360, redefiniendo la experiencia digital con soluciones inmersivas">
+        </figure>
+        <h1 class="hero-title">Tome el control de la rentabilidad de su negocio</h1>
+        <p>Somos un estudio de consultoria y desarrollo de software a medida. Ayudamos a pymes en crecimiento a dejar de decidir por intuicion y a empezar a decidir con datos reales.</p>
 
-      <!-- Entregable 5: badges de bootstrap, un componente aparte de la navbar y el carousel -->
-      <div class="hero-badges">
-        <span class="badge rounded-pill text-bg-light">Mendoza, Argentina</span>
-        <span class="badge rounded-pill text-bg-light">+400% retencion con contenido inmersivo</span>
-        <span class="badge rounded-pill text-bg-light">Diagnostico sin cargo</span>
+        <!-- Entregable 5: badges de bootstrap, un componente aparte de la navbar y el carousel -->
+        <div class="hero-badges">
+          <span class="badge rounded-pill text-bg-light">Mendoza, Argentina</span>
+          <span class="badge rounded-pill text-bg-light">+400% retencion con contenido inmersivo</span>
+          <span class="badge rounded-pill text-bg-light">Diagnostico sin cargo</span>
+        </div>
       </div>
     </section>
 
@@ -69,35 +71,39 @@
       <p>M&amp;G Studio 360 nace de la union de dos profesionales de Mendoza especializados en control de gestion y tecnologia. Combinamos consultoria de procesos con desarrollo de tableros de control a medida.</p>
     </section>
 
-    <!-- seccion nueva: el problema que resolvemos, con la imagen de sintomas vs impacto -->
-    <section class="section area-problema" data-aos="fade-left">
-      <h2>El costo real de la desconexion operativa</h2>
-      <p>Fugas de capital ocultas en el dia a dia: informacion dispersa en varios sistemas, falta de estandarizacion de procesos y reportes hechos a mano. El resultado son decisiones basadas en intuicion, perdida de horas-hombre y reaccion tardia ante caidas de rentabilidad.</p>
-      <figure class="media-figure">
-        <img src="assets/comparativa-impacto.jpg" alt="Comparativa de sintomas de desorganizacion operativa contra su impacto financiero">
-        <figcaption>Sintomas mas comunes vs. impacto financiero real en la empresa.</figcaption>
-      </figure>
+    <!-- seccion nueva: el problema que resolvemos, con la imagen de sintomas vs impacto (full-bleed) -->
+    <section class="section-full area-problema" data-aos="fade-left">
+      <div class="section-inner">
+        <h2>El costo real de la desconexion operativa</h2>
+        <p>Fugas de capital ocultas en el dia a dia: informacion dispersa en varios sistemas, falta de estandarizacion de procesos y reportes hechos a mano. El resultado son decisiones basadas en intuicion, perdida de horas-hombre y reaccion tardia ante caidas de rentabilidad.</p>
+        <figure class="media-figure">
+          <img src="assets/comparativa-impacto.jpg" alt="Comparativa de sintomas de desorganizacion operativa contra su impacto financiero">
+          <figcaption>Sintomas mas comunes vs. impacto financiero real en la empresa.</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <!-- seccion nueva: alcance del emprendimiento (sacada del word de alcance) -->
-    <section class="section area-alcance" data-aos="fade-up">
-      <h2>Como trabajamos</h2>
-      <p>Nuestro enfoque se divide en 3 fases, desde el diagnostico inicial hasta el tablero de control final.</p>
-      <div class="cards-grid">
-        <article class="card" data-aos="fade-up">
-          <h3>1. Auditoria y reingenieria</h3>
-          <p>Analizamos como trabaja su equipo hoy y estandarizamos el ciclo de vida de la informacion para eliminar cuellos de botella.</p>
-        </article>
+    <!-- seccion nueva: alcance del emprendimiento (sacada del word de alcance), full-bleed -->
+    <section class="section-full area-alcance" data-aos="fade-up">
+      <div class="section-inner">
+        <h2>Como trabajamos</h2>
+        <p>Nuestro enfoque se divide en 3 fases, desde el diagnostico inicial hasta el tablero de control final.</p>
+        <div class="cards-grid">
+          <article class="card" data-aos="fade-up">
+            <h3>1. Auditoria y reingenieria</h3>
+            <p>Analizamos como trabaja su equipo hoy y estandarizamos el ciclo de vida de la informacion para eliminar cuellos de botella.</p>
+          </article>
 
-        <article class="card" data-aos="fade-up" data-aos-delay="100">
-          <h3>2. Desarrollo full-stack a medida</h3>
-          <p>Construimos el back-end (bases de datos relacionales o en la nube) y un front-end pensado en la experiencia del usuario (UX/UI).</p>
-        </article>
+          <article class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3>2. Desarrollo full-stack a medida</h3>
+            <p>Construimos el back-end (bases de datos relacionales o en la nube) y un front-end pensado en la experiencia del usuario (UX/UI).</p>
+          </article>
 
-        <article class="card" data-aos="fade-up" data-aos-delay="200">
-          <h3>3. Despliegue de modulos criticos</h3>
-          <p>Consolidamos todo en dashboards ejecutivos: modulo financiero, gestion de proyectos y control de activos.</p>
-        </article>
+          <article class="card" data-aos="fade-up" data-aos-delay="200">
+            <h3>3. Despliegue de modulos criticos</h3>
+            <p>Consolidamos todo en dashboards ejecutivos: modulo financiero, gestion de proyectos y control de activos.</p>
+          </article>
+        </div>
       </div>
     </section>
 

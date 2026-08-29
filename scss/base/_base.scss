@@ -80,28 +80,54 @@ a {
 }
 
 // Entregable 3: espaciado con box model
+// (mucho mas aire vertical, estilo minimal, las secciones respiran mas)
 .section {
   max-width: 1100px;
   margin: 0 auto 1.5rem auto;
-  padding: 2.5rem 1.5rem;
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+}
+
+// secciones "full-bleed" (foto/color a todo el ancho de la pantalla,
+// con el contenido centrado adentro en una franja de 1100px) - asi
+// se arma ese efecto de landing prolija
+.section-full,
+.hero-full {
+  width: 100%;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+}
+
+.hero-full {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 // fotos de Mendoza de fondo (mza, potrerillos y tupungato), donde nacio
 // el emprendimiento. uso el mixin fondo-imagen para no repetir el mismo
 // bloque 3 veces
-.hero {
-  @include fondo-imagen('../assets/mendoza-tupungato.jpg');
-  border-radius: $radio-borde;
+.hero-full {
+  @include fondo-imagen('../assets/mendoza-tupungato.jpg', rgba(255, 255, 255, 0.8));
 }
 
 .area-problema {
-  @include fondo-imagen('../assets/mendoza.jpg');
-  border-radius: $radio-borde;
+  @include fondo-imagen('../assets/mendoza.jpg', rgba(255, 255, 255, 0.85));
 }
 
 .area-alcance {
-  @include fondo-imagen('../assets/mendoza-potrerillos.jpg');
-  border-radius: $radio-borde;
+  @include fondo-imagen('../assets/mendoza-potrerillos.jpg', rgba(255, 255, 255, 0.85));
+}
+
+// Entregable 9 (contraste): con foto de fondo, el texto secundario en gris
+// clarito puede no llegar al contraste minimo si la foto tiene zonas
+// oscuras. Uso el color de texto fuerte para no arriesgar
+.hero-full p,
+.section-full p {
+  color: $color-texto;
 }
 
 // fondo semi-transparente para separar secciones sin usar otro color solido
@@ -110,15 +136,29 @@ a {
   border-radius: $radio-borde;
 }
 
+// el hero va centrado, asi queda mas prolijo
+.hero-full .section-inner {
+  text-align: center;
+}
+
 .hero-banner {
-  margin-bottom: 1.25rem;
+  max-width: 420px;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.hero-full p {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .highlight-list {

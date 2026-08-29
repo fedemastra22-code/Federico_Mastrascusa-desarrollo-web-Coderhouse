@@ -1,14 +1,16 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
+// boton estilo pildora
 .btn {
   background-color: $color-primario;
   color: #ffffff;
   border: none;
-  padding: 0.7rem 1.4rem;
-  border-radius: $radio-borde-chico;
+  padding: 0.85rem 2rem;
+  border-radius: $radio-pill;
   font-family: $fuente-cuerpo;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
   @include transicion(background-color);
 

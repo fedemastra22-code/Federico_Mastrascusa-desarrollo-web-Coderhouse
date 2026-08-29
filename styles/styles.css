@@ -87,22 +87,36 @@ a {
 .section {
   max-width: 1100px;
   margin: 0 auto 1.5rem auto;
-  padding: 2.5rem 1.5rem;
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem;
 }
 
-.hero {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../assets/mendoza-tupungato.jpg");
+.section-full,
+.hero-full {
+  width: 100%;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+}
+
+.hero-full {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-full {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/mendoza-tupungato.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 @media (max-width: 768px) {
-  .hero {
+  .hero-full {
     background-attachment: scroll;
   }
-}
-.hero {
-  border-radius: 8px;
 }
 
 .area-problema {
@@ -116,9 +130,6 @@ a {
     background-attachment: scroll;
   }
 }
-.area-problema {
-  border-radius: 8px;
-}
 
 .area-alcance {
   background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../assets/mendoza-potrerillos.jpg");
@@ -131,24 +142,39 @@ a {
     background-attachment: scroll;
   }
 }
-.area-alcance {
-  border-radius: 8px;
+
+.hero-full p,
+.section-full p {
+  color: #2c2438;
 }
 
 .section-tint {
   background-color: rgba(91, 58, 153, 0.05);
-  border-radius: 8px;
+  border-radius: 20px;
+}
+
+.hero-full .section-inner {
+  text-align: center;
 }
 
 .hero-banner {
-  margin-bottom: 1.25rem;
+  max-width: 420px;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.hero-full p {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .highlight-list {
@@ -180,7 +206,7 @@ a {
 }
 .media-figure img {
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 20px;
   display: block;
 }
 .media-figure figcaption {
@@ -191,33 +217,40 @@ a {
 
 h1, h2, h3 {
   font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   color: #1f1435;
 }
 
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
+  font-size: clamp(2.4rem, 5vw + 1rem, 4.2rem);
+  margin-bottom: 1.25rem;
 }
 
 h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.75rem;
+  font-size: clamp(1.8rem, 3vw + 1rem, 2.75rem);
+  margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem);
+  letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
 }
 
 p {
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.4vw + 0.95rem, 1.15rem);
+  font-weight: 400;
+  color: #6c6480;
   margin-bottom: 0.5rem;
 }
 
 .site-header .navbar {
-  background-color: #1f1435;
-  padding: 0.75rem 0;
+  background-color: rgba(31, 20, 53, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -241,9 +274,10 @@ p {
 .site-header .nav-list .nav-link {
   color: #d9cff0;
   font-weight: 500;
+  font-size: 0.9rem;
   transition: color 0.2s ease;
-  border-radius: 4px;
-  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
 }
 .site-header .nav-list .nav-link:hover {
   color: #ffffff;
@@ -261,12 +295,15 @@ p {
 .site-footer {
   background-color: #1f1435;
   color: #d9cff0;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+}
+.site-footer p {
+  color: #d9cff0;
 }
 @media (min-width: 1024px) {
   .site-footer {
@@ -291,10 +328,11 @@ p {
   background-color: #5b3a99;
   color: #ffffff;
   border: none;
-  padding: 0.7rem 1.4rem;
-  border-radius: 6px;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
   font-family: "Inter", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -311,17 +349,17 @@ p {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.85);
-  border: 1px solid #e3ddf2;
-  border-radius: 8px;
-  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 20px;
+  padding: 28px;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   transition: transform 0.25s ease;
 }
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(91, 58, 153, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(91, 58, 153, 0.15);
 }
 
 .contact-form {
@@ -333,7 +371,7 @@ p {
   padding: 0.6rem;
   margin-top: 0.25rem;
   border: 1px solid rgba(91, 58, 153, 0.25);
-  border-radius: 6px;
+  border-radius: 12px;
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }

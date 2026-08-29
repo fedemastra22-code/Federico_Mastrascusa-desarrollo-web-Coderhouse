@@ -1,8 +1,11 @@
 @use '../utilities/variables' as *;
 
+// navbar tipo "vidrio esmerilado"
 .site-header .navbar {
-  background-color: $color-secundario;
-  padding: 0.75rem 0;
+  background-color: rgba($color-secundario, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
