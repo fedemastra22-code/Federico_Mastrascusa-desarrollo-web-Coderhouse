@@ -1,0 +1,31 @@
+// Entregable 8: animacion local (keyframes) para el titulo principal
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  animation: fadeInUp 0.8s ease both;
+}
+
+// Placeholder reutilizable para grillas responsive (mobile-first)
+%grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Entregable 8: uso de @extend sobre el placeholder anterior
+.cards-grid {
+  @extend %grid-responsive;
+}

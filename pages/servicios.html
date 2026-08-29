@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <!-- Entregable 5: Bootstrap CSS via CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Entregable 8: libreria de animaciones AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Entregable 2: hoja de estilos propia (va despues de Bootstrap para poder sobreescribir) -->
   <link rel="stylesheet" href="../styles/styles.css">
 </head>
@@ -42,28 +44,31 @@
       <p>Disenamos modulos de gestion a medida para que cada empresa controle lo que realmente le importa.</p>
     </section>
 
+    <!-- Entregable 8: grid de tarjetas full responsive -->
     <section class="section">
       <h2>Modulos de gestion</h2>
 
-      <article class="card">
-        <h3>Control Financiero</h3>
-        <p>Margenes de rentabilidad, flujo de caja y previsiones de liquidez en tableros claros y actualizados.</p>
-      </article>
+      <div class="cards-grid">
+        <article class="card" data-aos="fade-up">
+          <h3>Control Financiero</h3>
+          <p>Margenes de rentabilidad, flujo de caja y previsiones de liquidez en tableros claros y actualizados.</p>
+        </article>
 
-      <article class="card">
-        <h3>Gestion de Proyectos</h3>
-        <p>Cotizaciones, contratos y certificaciones centralizadas para no perder de vista ningun avance.</p>
-      </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Gestion de Proyectos</h3>
+          <p>Cotizaciones, contratos y certificaciones centralizadas para no perder de vista ningun avance.</p>
+        </article>
 
-      <article class="card">
-        <h3>Control de Activos</h3>
-        <p>Stock de almacenes y mantenimiento de maquinaria bajo control, con alertas antes de que surjan problemas.</p>
-      </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Control de Activos</h3>
+          <p>Stock de almacenes y mantenimiento de maquinaria bajo control, con alertas antes de que surjan problemas.</p>
+        </article>
 
-      <article class="card">
-        <h3>Automatizacion con IA</h3>
-        <p>Conciliaciones contables automaticas y reportes ejecutivos generados sin esfuerzo manual.</p>
-      </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Automatizacion con IA</h3>
+          <p>Conciliaciones contables automaticas y reportes ejecutivos generados sin esfuerzo manual.</p>
+        </article>
+      </div>
     </section>
   </main>
 
@@ -77,5 +82,8 @@
 
   <!-- Entregable 5: Bootstrap JS bundle (incluye Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Entregable 8: libreria de animaciones AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 700, once: true });</script>
 </body>
 </html>
