@@ -3,10 +3,22 @@
 .site-header .navbar {
   background-color: $color-secundario;
   padding: 0.75rem 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
   font-family: $fuente-titulos;
   font-weight: 700;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 3px;
 }

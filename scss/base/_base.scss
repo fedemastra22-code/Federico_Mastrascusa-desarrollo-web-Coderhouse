@@ -9,8 +9,14 @@
 body {
   font-family: $fuente-cuerpo;
   color: $color-texto;
-  background-color: $color-fondo;
   line-height: 1.6;
+  // Entregable X (mejora visual): fondo con degrade sutil en vez de color plano,
+  // fijo para que no se mueva al scrollear
+  background-color: $color-fondo;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba($color-primario, 0.06), transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba($color-acento, 0.08), transparent 40%);
+  background-attachment: fixed;
 }
 
 a {
@@ -25,6 +31,7 @@ a {
     "hero"
     "quienes"
     "problema"
+    "alcance"
     "servicios"
     "industrias"
     "trabajo";
@@ -34,6 +41,7 @@ a {
 .area-hero       { grid-area: hero; }
 .area-quienes    { grid-area: quienes; }
 .area-problema   { grid-area: problema; }
+.area-alcance    { grid-area: alcance; }
 .area-servicios  { grid-area: servicios; }
 .area-industrias { grid-area: industrias; }
 .area-trabajo    { grid-area: trabajo; }
@@ -58,6 +66,7 @@ a {
     grid-template-areas:
       "hero hero"
       "quienes problema"
+      "alcance alcance"
       "servicios industrias"
       "trabajo trabajo";
     grid-template-columns: 1fr 1fr;
@@ -71,13 +80,20 @@ a {
 
 // Entregable 3: espaciado con box model
 .section {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto 1.5rem auto;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 1.5rem;
 }
 
 .hero {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: $radio-borde;
+}
+
+// fondo semi-transparente para separar secciones sin usar otro color solido
+.section-tint {
+  background-color: rgba($color-primario, 0.05);
+  border-radius: $radio-borde;
 }
 
 .hero-banner {
