@@ -14,3 +14,19 @@
     box-shadow: 0 8px 20px rgba($color-primario, 0.15);
   }
 }
+
+// avatar con iniciales para cuando no hay foto todavia
+.avatar-placeholder {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: $color-primario;
+  color: #ffffff;
+  font-family: $fuente-titulos;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}

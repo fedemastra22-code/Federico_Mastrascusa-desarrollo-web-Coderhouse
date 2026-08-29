@@ -40,7 +40,7 @@ a {
 
 .team-grid {
   display: grid;
-  grid-template-areas: "titulo" "federico" "eugenio";
+  grid-template-areas: "titulo" "federico" "eugenio" "agostino";
   gap: 1rem;
 }
 
@@ -56,14 +56,18 @@ a {
   grid-area: eugenio;
 }
 
+.area-agostino {
+  grid-area: agostino;
+}
+
 @media (min-width: 1024px) {
   .page-grid {
     grid-template-areas: "hero hero" "quienes servicios" "trabajo trabajo";
     grid-template-columns: 1fr 1fr;
   }
   .team-grid {
-    grid-template-areas: "titulo titulo" "federico eugenio";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo titulo titulo" "federico eugenio agostino";
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .section {
@@ -206,6 +210,21 @@ p {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(91, 58, 153, 0.15);
+}
+
+.avatar-placeholder {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: #5b3a99;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
 }
 
 .contact-form {

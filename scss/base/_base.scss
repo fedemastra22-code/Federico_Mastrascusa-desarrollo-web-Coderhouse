@@ -39,13 +39,15 @@ a {
   grid-template-areas:
     "titulo"
     "federico"
-    "eugenio";
+    "eugenio"
+    "agostino";
   gap: 1rem;
 }
 
-.area-titulo   { grid-area: titulo; }
-.area-federico { grid-area: federico; }
-.area-eugenio  { grid-area: eugenio; }
+.area-titulo    { grid-area: titulo; }
+.area-federico  { grid-area: federico; }
+.area-eugenio   { grid-area: eugenio; }
+.area-agostino  { grid-area: agostino; }
 
 @media (min-width: 1024px) {
   .page-grid {
@@ -57,8 +59,8 @@ a {
   }
 
   .team-grid {
-    grid-template-areas: "titulo titulo" "federico eugenio";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo titulo titulo" "federico eugenio agostino";
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
