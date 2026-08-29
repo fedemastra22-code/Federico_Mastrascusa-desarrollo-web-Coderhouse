@@ -1,0 +1,12 @@
+@use '../utilities/variables' as *;
+
+.site-header .navbar {
+  background-color: $color-secundario;
+  padding: 0.75rem 0;
+}
+
+.logo {
+  font-family: $fuente-titulos;
+  font-weight: 700;
+  color: #ffffff;
+}

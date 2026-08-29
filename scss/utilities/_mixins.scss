@@ -1,0 +1,4 @@
+// Entregable 7: mixin basico para no repetir transiciones
+@mixin transicion($propiedad: all, $duracion: 0.2s) {
+  transition: $propiedad $duracion ease;
+}

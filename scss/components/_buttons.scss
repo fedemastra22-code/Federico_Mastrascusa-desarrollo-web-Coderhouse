@@ -1,0 +1,28 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.btn {
+  background-color: $color-primario;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: $radio-borde-chico;
+  font-family: $fuente-cuerpo;
+  font-weight: 500;
+  cursor: pointer;
+  @include transicion(background-color);
+
+  &:hover {
+    background-color: $color-primario-oscuro;
+  }
+
+  &:focus {
+    outline: 2px solid $color-acento;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    background-color: $color-primario-activo;
+    transform: scale(0.98);
+  }
+}

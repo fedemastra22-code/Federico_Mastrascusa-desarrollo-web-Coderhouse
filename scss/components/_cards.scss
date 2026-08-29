@@ -1,0 +1,16 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid $color-borde;
+  border-radius: $radio-borde;
+  padding: 20px;
+  margin-bottom: 1.5rem;
+  @include transicion(transform, 0.25s);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba($color-primario, 0.15);
+  }
+}

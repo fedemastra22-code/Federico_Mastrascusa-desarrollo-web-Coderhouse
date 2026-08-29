@@ -1,0 +1,15 @@
+@use '../utilities/variables' as *;
+
+.contact-form {
+  max-width: 420px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.25rem;
+  border: 1px solid rgba($color-primario, 0.25);
+  border-radius: $radio-borde-chico;
+  font-family: $fuente-cuerpo;
+  box-sizing: border-box;
+}

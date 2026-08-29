@@ -1,0 +1,98 @@
+@use '../utilities/variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fuente-cuerpo;
+  color: $color-texto;
+  background-color: $color-fondo;
+  line-height: 1.6;
+}
+
+a {
+  color: $color-primario;
+  text-decoration: none;
+}
+
+// Entregable 4: CSS Grid + Media Queries (Mobile First)
+.page-grid {
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "quienes"
+    "servicios"
+    "trabajo";
+  gap: 1rem;
+}
+
+.area-hero      { grid-area: hero; }
+.area-quienes   { grid-area: quienes; }
+.area-servicios { grid-area: servicios; }
+.area-trabajo   { grid-area: trabajo; }
+
+.team-grid {
+  display: grid;
+  grid-template-areas:
+    "titulo"
+    "federico"
+    "eugenio";
+  gap: 1rem;
+}
+
+.area-titulo   { grid-area: titulo; }
+.area-federico { grid-area: federico; }
+.area-eugenio  { grid-area: eugenio; }
+
+@media (min-width: 1024px) {
+  .page-grid {
+    grid-template-areas:
+      "hero hero"
+      "quienes servicios"
+      "trabajo trabajo";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .team-grid {
+    grid-template-areas: "titulo titulo" "federico eugenio";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Entregable 3: espaciado con box model
+.section {
+  max-width: 900px;
+  margin: 0 auto 1.5rem auto;
+  padding: 2rem 1.5rem;
+}
+
+.hero {
+  background-color: #ffffff;
+}
+
+.highlight-list {
+  padding-left: 1.2rem;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.media-figure {
+  margin: 0;
+
+  img {
+    max-width: 100%;
+    border-radius: $radio-borde;
+    display: block;
+  }
+
+  figcaption {
+    font-size: 0.85rem;
+    color: $color-texto-suave;
+    margin-top: 0.5rem;
+  }
+}

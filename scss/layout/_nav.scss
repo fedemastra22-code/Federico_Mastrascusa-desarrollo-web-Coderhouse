@@ -1,0 +1,25 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.site-header .nav-list .nav-link {
+  color: $color-texto-claro;
+  font-weight: 500;
+  @include transicion(color);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+
+  &:hover {
+    color: #ffffff;
+    background-color: rgba($color-acento, 0.15);
+  }
+
+  &:focus {
+    outline: 2px solid $color-acento;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    color: #ffffff;
+    background-color: rgba($color-acento, 0.3);
+  }
+}
