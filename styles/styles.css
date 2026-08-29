@@ -144,6 +144,13 @@ a {
   margin-bottom: 1.25rem;
 }
 
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
 .highlight-list {
   padding-left: 1.2rem;
 }
@@ -239,6 +246,17 @@ p {
   color: #d9cff0;
   padding: 1.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+@media (min-width: 1024px) {
+  .site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
 }
 
 .social-list {
@@ -246,7 +264,6 @@ p {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 0.75rem;
 }
 .social-list a {
   color: #8b6fd1;
