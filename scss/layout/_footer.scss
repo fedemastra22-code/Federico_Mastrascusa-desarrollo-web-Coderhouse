@@ -1,40 +1,70 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
-// Entregable 3: contenedor padre en flex (copyright y redes en columna en
-// mobile, en fila con espacio uniforme en desktop)
 .site-footer {
   background-color: $color-secundario;
   color: $color-texto-claro;
-  padding: 2rem 1.5rem;
-  text-align: center;
+  padding: 2.5rem $padding-lateral;
+}
+
+// Entregable 3: contenedor padre en flex (copyright y redes en columna en
+// mobile, en fila con espacio uniforme en desktop). Va adentro de la
+// franja de 1100px para que quede alineado con las secciones de arriba
+.footer-inner {
+  max-width: $ancho-contenido;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-
-  // el "p" global ahora tiene su propio color (gris), hay que
-  // pisarlo aca para que siga siendo legible sobre el fondo oscuro
-  p {
-    color: $color-texto-claro;
-  }
+  text-align: center;
+  gap: 1.25rem;
 
   @media (min-width: 1024px) {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     text-align: left;
   }
+}
+
+// el "p" global ahora tiene su propio color (gris), hay que pisarlo
+// aca para que siga siendo legible sobre el fondo oscuro
+.site-footer p {
+  color: $color-texto-claro;
+  margin-bottom: 0;
+}
+
+.footer-texto {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.footer-bajada {
+  font-size: 0.85rem;
 }
 
 .social-list {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
+  margin: 0;
 
   a {
     // Entregable 9: el acento (#8b6fd1) daba bajo contraste sobre el fondo
     // oscuro del footer, uso el mismo lila claro que el resto del texto
     color: $color-texto-claro;
     font-weight: 500;
+    @include transicion(color);
+
+    &:hover {
+      color: $color-blanco;
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-acento;
+      outline-offset: 3px;
+    }
   }
 }

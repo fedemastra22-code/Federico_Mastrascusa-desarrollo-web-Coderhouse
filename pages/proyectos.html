@@ -11,7 +11,8 @@
 
   <!-- Entregable 2: fuentes de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Entregable 5: Bootstrap CSS via CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Entregable 8: lib de animaciones (AOS) -->
@@ -37,7 +38,7 @@
             <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="sobre-mi.html">Sobre Nosotros</a></li>
             <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-            <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link activo" href="proyectos.html" aria-current="page">Proyectos</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
           </ul>
         </div>
@@ -45,23 +46,29 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero-full">
+  <main class="page-main">
+    <section class="hero-full fondo-mza">
       <div class="section-inner">
-        <h1>Proyectos Realizados</h1>
+        <h1 class="hero-title">Proyectos Realizados</h1>
         <p>Algunos de los casos en los que aplicamos nuestra metodologia de trabajo.</p>
+        <div class="hero-badges">
+          <span class="badge rounded-pill text-bg-light">Real Estate</span>
+          <span class="badge rounded-pill text-bg-light">Construccion</span>
+          <span class="badge rounded-pill text-bg-light">Retail</span>
+        </div>
       </div>
     </section>
 
     <!-- Entregable 8: grid de tarjetas full responsive -->
     <section class="section" data-aos="fade-up">
       <h2>Casos destacados</h2>
+      <p>Desarrollos que arrancaron con el mismo problema: informacion repartida en planillas sueltas.</p>
 
-      <div class="cards-grid">
+      <div class="cards-grid-3">
         <article class="card" data-aos="fade-up">
           <h3>Dashboard Ejecutivo para Real Estate</h3>
           <figure class="media-figure">
-            <img src="../assets/proyecto-dashboard.jpg" alt="Tablero de control ejecutivo mostrando indicadores de una empresa de real estate">
+            <img src="../assets/proyecto-dashboard.jpg" alt="Tablero de control ejecutivo mostrando indicadores de una empresa de real estate" loading="lazy">
             <figcaption>Dashboard de rentabilidad para una desarrolladora inmobiliaria.</figcaption>
           </figure>
           <p>Centralizamos la informacion de ventas y obra en un unico tablero de control con actualizacion automatica.</p>
@@ -70,44 +77,73 @@
         <article class="card" data-aos="fade-up" data-aos-delay="100">
           <h3>Seguimiento de Proyectos con Linea de Tiempo</h3>
           <figure class="media-figure">
-            <img src="../assets/proyecto-timeline.jpg" alt="Cronograma de proyecto mostrando avances por etapa">
+            <img src="../assets/proyecto-timeline.jpg" alt="Cronograma de proyecto mostrando avances por etapa" loading="lazy">
             <figcaption>Cronograma de avance de obra desarrollado para un cliente de construccion.</figcaption>
           </figure>
           <p>Implementamos un sistema de seguimiento de contratos y redeterminacion de precios frente a la inflacion.</p>
+        </article>
+
+        <article class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Modulo de Turnos y Agenda</h3>
+          <figure class="media-figure">
+            <img src="../assets/modulo-turnos.png" alt="Pantalla de un modulo de turnos con tablero de tareas y agenda semanal por equipo" loading="lazy">
+            <figcaption>Pantallas de referencia del modulo de turnos y carga de horas.</figcaption>
+          </figure>
+          <p>Tablero de asignacion de tareas, control de horas trabajadas y agenda semanal por equipo, para empresas que trabajan con turnos.</p>
         </article>
       </div>
     </section>
 
     <!-- Entregable 5: galeria con carousel de Bootstrap -->
-    <section class="section" data-aos="fade-up">
-      <h2>Galeria de proyectos</h2>
-      <div id="galeriaProyectos" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../assets/proyecto-dashboard.jpg" class="d-block w-100" alt="Dashboard ejecutivo de una empresa de real estate">
+    <section class="section-full section-tint" data-aos="fade-up">
+      <div class="section-inner">
+        <h2>Galeria de proyectos</h2>
+        <p>Capturas de los tableros tal como los usa el cliente todos los dias.</p>
+        <div id="galeriaProyectos" class="carousel slide mt-4" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../assets/proyecto-dashboard.jpg" class="d-block w-100" alt="Dashboard ejecutivo de una empresa de real estate" loading="lazy">
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/proyecto-timeline.jpg" class="d-block w-100" alt="Linea de tiempo de un proyecto de construccion" loading="lazy">
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/modulo-turnos-detalle.png" class="d-block w-100" alt="Vista de detalle del modulo de turnos con contador de horas y carga por equipo" loading="lazy">
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="../assets/proyecto-timeline.jpg" class="d-block w-100" alt="Linea de tiempo de un proyecto de construccion">
-          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#galeriaProyectos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#galeriaProyectos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#galeriaProyectos" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#galeriaProyectos" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
+      </div>
+    </section>
+
+    <!-- franja de cierre con el link a contacto -->
+    <section class="section-full cta-band" data-aos="fade-up">
+      <div class="section-inner">
+        <h2>Tu caso puede ser el proximo</h2>
+        <p>Contanos que estas midiendo hoy a mano y vemos como automatizarlo.</p>
+        <a class="btn btn-claro" href="contacto.html">Contarnos tu caso</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 M&amp;G Studio 360. Todos los derechos reservados.</p>
-    <ul class="social-list">
-      <li><a href="https://www.linkedin.com/in/federico-mastrascusa-a8b022154/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://wa.me/5492615087856" target="_blank">WhatsApp</a></li>
-    </ul>
+    <div class="footer-inner">
+      <div class="footer-texto">
+        <p>&copy; 2026 M&amp;G Studio 360. Todos los derechos reservados.</p>
+        <p class="footer-bajada">Consultoria y desarrollo de software a medida - Mendoza, Argentina.</p>
+      </div>
+      <ul class="social-list">
+        <li><a href="https://www.linkedin.com/in/federico-mastrascusa-a8b022154/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://wa.me/5492615087856" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
   </footer>
 
   <!-- Entregable 5: bootstrap JS bundle (trae popper) -->

@@ -17,13 +17,22 @@
   animation: fadeInUp 0.8s ease both;
 }
 
+// el texto del hero entra atras del titulo, con un toque de delay
+.hero-full .section-inner > p {
+  animation: fadeInUp 0.8s 0.15s ease both;
+}
+
+.hero-badges {
+  animation: fadeInUp 0.8s 0.3s ease both;
+}
+
 // pulso suave en el badge del diagnostico, para que llame un poco mas la atencion
 @keyframes pulso {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(91, 58, 153, 0.35);
+    box-shadow: 0 0 0 0 rgba($color-primario, 0.35);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(91, 58, 153, 0);
+    box-shadow: 0 0 0 8px rgba($color-primario, 0);
   }
 }
 
@@ -59,7 +68,7 @@
 %grid-responsive {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1.5rem;
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -69,4 +78,16 @@
 // Entregable 8: uso de @extend sobre el placeholder anterior
 .cards-grid {
   @extend %grid-responsive;
+  margin-top: 2rem;
+}
+
+// misma grilla pero de a 3, para las secciones que tienen 3 cards
+// (sino queda una sola colgando en la fila de abajo)
+.cards-grid-3 {
+  @extend %grid-responsive;
+  margin-top: 2rem;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -1,21 +1,27 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
-// boton estilo pildora
+// boton estilo pildora (lo uso como <a> y como input submit, por eso
+// el display y el text-align)
 .btn {
+  display: inline-block;
   background-color: $color-primario;
-  color: #ffffff;
+  color: $color-blanco;
   border: none;
   padding: 0.85rem 2rem;
   border-radius: $radio-pill;
   font-family: $fuente-cuerpo;
   font-weight: 600;
   font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
   @include transicion(background-color);
 
   &:hover {
     background-color: $color-primario-oscuro;
+    color: $color-blanco;
   }
 
   &:focus {
@@ -26,5 +32,21 @@
   &:active {
     background-color: $color-primario-activo;
     transform: scale(0.98);
+  }
+}
+
+// version clara, para cuando el boton va arriba de la franja oscura
+.btn-claro {
+  background-color: $color-blanco;
+  color: $color-primario-oscuro;
+
+  &:hover {
+    background-color: $color-texto-claro;
+    color: $color-primario-oscuro;
+  }
+
+  &:active {
+    background-color: $color-texto-claro;
+    color: $color-primario-activo;
   }
 }
