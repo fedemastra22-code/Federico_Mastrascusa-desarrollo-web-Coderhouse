@@ -164,6 +164,55 @@ a {
   background-color: #472c78;
 }
 
+/* =========================================================
+   Entregable 4: CSS Grid + Media Queries (Mobile First)
+   ========================================================= */
+
+/* Mobile (base): una columna, secciones apiladas */
+.page-grid {
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "quienes"
+    "servicios"
+    "trabajo";
+  gap: 1rem;
+}
+
+.area-hero    { grid-area: hero; }
+.area-quienes { grid-area: quienes; }
+.area-servicios { grid-area: servicios; }
+.area-trabajo { grid-area: trabajo; }
+
+.team-grid {
+  display: grid;
+  grid-template-areas:
+    "titulo"
+    "federico"
+    "eugenio";
+  gap: 1rem;
+}
+
+.area-titulo   { grid-area: titulo; }
+.area-federico { grid-area: federico; }
+.area-eugenio  { grid-area: eugenio; }
+
+/* Desktop: a partir de 1024px la grilla se expande a mas columnas */
+@media (min-width: 1024px) {
+  .page-grid {
+    grid-template-areas:
+      "hero hero"
+      "quienes servicios"
+      "trabajo trabajo";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .team-grid {
+    grid-template-areas: "titulo titulo" "federico eugenio";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* -------- Footer -------- */
 .site-footer {
   background-color: #1f1435;
