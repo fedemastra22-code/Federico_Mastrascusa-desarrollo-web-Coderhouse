@@ -1,15 +1,80 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
+// el form ahora es una grilla de filas, sin los <p> y <br> de antes
 .contact-form {
-  max-width: 420px;
+  display: grid;
+  gap: 1.1rem;
+  max-width: 560px;
+  margin-top: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+// nombre y mail van al lado en pantallas medianas para arriba
+.form-fila-doble {
+  display: grid;
+  gap: 1.1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: $color-texto;
 }
 
 .form-input {
   width: 100%;
-  padding: 0.6rem;
-  margin-top: 0.25rem;
-  border: 1px solid rgba($color-primario, 0.25);
+  padding: 0.75rem 1rem;
+  border: 1px solid $color-borde;
   border-radius: $radio-borde-chico;
+  background-color: $color-blanco;
   font-family: $fuente-cuerpo;
-  box-sizing: border-box;
+  font-size: 0.95rem;
+  color: $color-texto;
+  @include transicion(border-color);
+
+  &::placeholder {
+    color: $color-texto-suave;
+  }
+
+  &:hover {
+    border-color: rgba($color-primario, 0.5);
+  }
+
+  &:focus {
+    outline: 2px solid $color-acento;
+    outline-offset: 1px;
+    border-color: $color-primario;
+  }
+}
+
+// el textarea que se pueda estirar solo para abajo, no para los costados
+textarea.form-input {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-nota {
+  font-size: 0.85rem;
+  color: $color-texto-suave;
+  margin-bottom: 0;
+}
+
+// el submit ocupa todo el ancho en mobile y se acomoda al texto en desktop
+.form-enviar {
+  justify-self: start;
+  width: 100%;
+
+  @media (min-width: 640px) {
+    width: auto;
+  }
 }
