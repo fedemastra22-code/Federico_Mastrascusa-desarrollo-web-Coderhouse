@@ -1,0 +1,169 @@
+/* =========================================================
+   Entregable 2: estilizacion visual completa del sitio
+   Paleta: primario #5b3a99, secundario #1f1435, acento #8b6fd1
+   Tipografia: Poppins (titulos) / Inter (cuerpo)
+   ========================================================= */
+
+/* -------- Estilos generales -------- */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #2c2438;
+  background-color: #f6f4fb;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #1f1435;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  color: #5b3a99;
+  text-decoration: none;
+}
+
+/* -------- Header y navegacion -------- */
+.site-header {
+  background-color: #1f1435;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: #d9cff0;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* -------- Contenido principal -------- */
+.section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.hero {
+  background-color: #ffffff;
+}
+
+.highlight-list {
+  padding-left: 1.2rem;
+}
+
+.highlight-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* -------- Tarjetas (equipo, servicios, proyectos) -------- */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e3ddf2;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* -------- Imagenes -------- */
+.media-figure {
+  margin: 0;
+}
+
+.media-figure img {
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.media-figure figcaption {
+  font-size: 0.85rem;
+  color: #6c6480;
+  margin-top: 0.5rem;
+}
+
+/* -------- Formulario de contacto -------- */
+.contact-form {
+  max-width: 420px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.25rem;
+  border: 1px solid #cfc6e6;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: #5b3a99;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #472c78;
+}
+
+/* -------- Footer -------- */
+.site-footer {
+  background-color: #1f1435;
+  color: #d9cff0;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 0.75rem;
+}
+
+.social-list a {
+  color: #8b6fd1;
+}

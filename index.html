@@ -4,40 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>M&amp;G Studio 360 - Inicio</title>
+
+  <!-- Entregable 2: fuentes de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Entregable 2: hoja de estilos propia -->
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 
   <!-- Entregable 1: header con logo y navegacion -->
-  <header>
-    <p>M&amp;G Studio 360</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="pages/sobre-mi.html">Sobre Nosotros</a></li>
-        <li><a href="pages/servicios.html">Servicios</a></li>
-        <li><a href="pages/proyectos.html">Proyectos</a></li>
-        <li><a href="pages/contacto.html">Contacto</a></li>
+  <header class="site-header">
+    <p class="logo">M&amp;G Studio 360</p>
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="index.html">Inicio</a></li>
+        <li><a class="nav-link" href="pages/sobre-mi.html">Sobre Nosotros</a></li>
+        <li><a class="nav-link" href="pages/servicios.html">Servicios</a></li>
+        <li><a class="nav-link" href="pages/proyectos.html">Proyectos</a></li>
+        <li><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <!-- Entregable 1: seccion de presentacion -->
-    <section>
+    <section class="section hero">
       <h1>Tome el control de la rentabilidad de su negocio</h1>
       <p>Somos un estudio de consultoria y desarrollo de software a medida. Ayudamos a pymes en crecimiento a dejar de decidir por intuicion y a empezar a decidir con datos reales.</p>
     </section>
 
     <!-- Entregable 1: seccion de informacion general -->
-    <section>
+    <section class="section">
       <h2>Quienes somos</h2>
       <p>M&amp;G Studio 360 nace de la union de dos profesionales de Mendoza especializados en control de gestion y tecnologia. Combinamos consultoria de procesos con desarrollo de tableros de control a medida.</p>
     </section>
 
     <!-- Entregable 1: seccion de servicios destacados en lista -->
-    <section>
+    <section class="section">
       <h2>Nuestros servicios destacados</h2>
-      <ul>
+      <ul class="highlight-list">
         <li>Control financiero y flujo de caja en tiempo real</li>
         <li>Gestion de proyectos, contratos y precios</li>
         <li>Control de logistica, stock y activos</li>
@@ -46,9 +52,9 @@
     </section>
 
     <!-- Entregable 1: imagen dentro de figure con figcaption -->
-    <section>
+    <section class="section">
       <h2>Nuestro trabajo</h2>
-      <figure>
+      <figure class="media-figure">
         <img src="assets/dashboard-financiero.jpg" alt="Tablero de control financiero en pantalla curva mostrando graficos de rentabilidad">
         <figcaption>Ejemplo de dashboard financiero desarrollado a medida para uno de nuestros clientes.</figcaption>
       </figure>
@@ -56,9 +62,9 @@
   </main>
 
   <!-- Entregable 1: footer con copyright y redes -->
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2026 M&amp;G Studio 360. Todos los derechos reservados.</p>
-    <ul>
+    <ul class="social-list">
       <li><a href="https://www.linkedin.com/in/federico-mastrascusa-a8b022154/" target="_blank">LinkedIn</a></li>
       <li><a href="https://wa.me/5492615087856" target="_blank">WhatsApp</a></li>
     </ul>
