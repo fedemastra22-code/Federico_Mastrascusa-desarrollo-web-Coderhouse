@@ -51,33 +51,36 @@
       <p>Contanos cual es tu principal problema de gestion y coordinamos una charla sin cargo.</p>
     </section>
 
-    <section class="section">
-      <h2>Dejanos tus datos</h2>
-      <form class="contact-form" action="#" method="post">
-        <p>
-          <label for="nombre">Nombre completo</label><br>
-          <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-        </p>
-        <p>
-          <label for="email">Correo electronico</label><br>
-          <input class="form-input" type="email" id="email" name="email" placeholder="tu@correo.com" required>
-        </p>
-        <p>
-          <label for="mensaje">Mensaje</label><br>
-          <textarea class="form-input" id="mensaje" name="mensaje" placeholder="Contanos tu consulta"></textarea>
-        </p>
-        <p>
-          <input class="btn" type="submit" value="Enviar consulta">
-        </p>
-      </form>
-    </section>
+    <!-- Entregable 8: layout responsive propio de esta pagina (columna en mobile, 2 columnas desde 1024px) -->
+    <section class="section contacto-flex">
+      <div class="contacto-form-col" data-aos="fade-right">
+        <h2>Dejanos tus datos</h2>
+        <form class="contact-form" action="#" method="post">
+          <p>
+            <label for="nombre">Nombre completo</label><br>
+            <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </p>
+          <p>
+            <label for="email">Correo electronico</label><br>
+            <input class="form-input" type="email" id="email" name="email" placeholder="tu@correo.com" required>
+          </p>
+          <p>
+            <label for="mensaje">Mensaje</label><br>
+            <textarea class="form-input" id="mensaje" name="mensaje" placeholder="Contanos tu consulta"></textarea>
+          </p>
+          <p>
+            <input class="btn" type="submit" value="Enviar consulta">
+          </p>
+        </form>
+      </div>
 
-    <section class="section">
-      <h2>Otros medios</h2>
-      <figure class="media-figure">
-        <img src="../assets/logo.png" alt="Logotipo de M&amp;G Studio 360">
-        <figcaption>M&amp;G Studio 360 - Mendoza, Argentina.</figcaption>
-      </figure>
+      <div class="contacto-info-col" data-aos="fade-left">
+        <h2>Otros medios</h2>
+        <figure class="media-figure">
+          <img src="../assets/logo.png" alt="Logotipo de M&amp;G Studio 360">
+          <figcaption>M&amp;G Studio 360 - Mendoza, Argentina.</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 

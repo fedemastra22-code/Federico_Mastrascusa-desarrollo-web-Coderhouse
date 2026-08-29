@@ -158,6 +158,23 @@ a {
   margin-bottom: 0.5rem;
 }
 
+.contacto-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 1024px) {
+  .contacto-flex {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.contacto-form-col,
+.contacto-info-col {
+  flex: 1;
+}
+
 .media-figure {
   margin: 0;
 }
@@ -266,7 +283,8 @@ p {
   gap: 1rem;
 }
 .social-list a {
-  color: #8b6fd1;
+  color: #d9cff0;
+  font-weight: 500;
 }
 
 .btn {

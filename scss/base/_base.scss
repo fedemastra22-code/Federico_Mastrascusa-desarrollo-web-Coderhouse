@@ -129,6 +129,25 @@ a {
   }
 }
 
+// Entregable 8: pagina de contacto responsive (columna en mobile, 2
+// columnas desde escritorio) para que las 5 paginas tengan su propio
+// breakpoint, no solo index y sobre-mi
+.contacto-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.contacto-form-col,
+.contacto-info-col {
+  flex: 1;
+}
+
 .media-figure {
   margin: 0;
 

@@ -26,6 +26,9 @@
   gap: 1rem;
 
   a {
-    color: $color-acento;
+    // Entregable 9: el acento (#8b6fd1) daba bajo contraste sobre el fondo
+    // oscuro del footer, uso el mismo lila claro que el resto del texto
+    color: $color-texto-claro;
+    font-weight: 500;
   }
 }
