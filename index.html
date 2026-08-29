@@ -11,7 +11,8 @@
 
   <!-- Entregable 2: fuentes de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Entregable 5: Bootstrap CSS via CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Entregable 8: lib de animaciones (AOS) -->
@@ -34,7 +35,7 @@
         </button>
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <ul class="navbar-nav ms-auto nav-list">
-            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link activo" href="index.html" aria-current="page">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="pages/sobre-mi.html">Sobre Nosotros</a></li>
             <li class="nav-item"><a class="nav-link" href="pages/servicios.html">Servicios</a></li>
             <li class="nav-item"><a class="nav-link" href="pages/proyectos.html">Proyectos</a></li>
@@ -50,9 +51,6 @@
     <!-- Entregable 1: seccion de presentacion -->
     <section class="hero-full area-hero">
       <div class="section-inner">
-        <figure class="media-figure hero-banner">
-          <img src="assets/hero-mg-studio360.jpg" alt="Banner M&amp;G Studio 360, redefiniendo la experiencia digital con soluciones inmersivas">
-        </figure>
         <h1 class="hero-title">Tome el control de la rentabilidad de su negocio</h1>
         <p>Somos un estudio de consultoria y desarrollo de software a medida. Ayudamos a pymes en crecimiento a dejar de decidir por intuicion y a empezar a decidir con datos reales.</p>
 
@@ -62,22 +60,39 @@
           <span class="badge rounded-pill text-bg-light">+400% retencion con contenido inmersivo</span>
           <span class="badge rounded-pill text-bg-light">Diagnostico sin cargo</span>
         </div>
+
+        <!-- la img va abajo del titulo, si va arriba el h1 queda muy hundido -->
+        <figure class="media-figure hero-banner">
+          <img src="assets/hero-mg-studio360.jpg" alt="Banner M&amp;G Studio 360, redefiniendo la experiencia digital con soluciones inmersivas">
+        </figure>
       </div>
     </section>
 
     <!-- Entregable 1: seccion de informacion general -->
     <section class="section area-quienes" data-aos="fade-right">
       <h2>Quienes somos</h2>
-      <p>M&amp;G Studio 360 nace de la union de dos profesionales de Mendoza especializados en control de gestion y tecnologia. Combinamos consultoria de procesos con desarrollo de tableros de control a medida.</p>
+      <p>M&amp;G Studio 360 nace de la union de tres profesionales de Mendoza especializados en control de gestion, tecnologia y desarrollo de producto. Combinamos consultoria de procesos con desarrollo de tableros de control a medida.</p>
+    </section>
+
+    <!-- Entregable 1: seccion de servicios destacados en lista -->
+    <!-- va al lado de "quienes somos" desde 1024px (ver el grid del main) -->
+    <section class="section area-servicios" data-aos="fade-left">
+      <h2>Nuestros servicios destacados</h2>
+      <ul class="highlight-list">
+        <li>Control financiero y flujo de caja en tiempo real</li>
+        <li>Gestion de proyectos, contratos y precios</li>
+        <li>Control de logistica, stock y activos</li>
+        <li>Automatizacion con inteligencia artificial</li>
+      </ul>
     </section>
 
     <!-- seccion nueva: el problema que resolvemos, con la imagen de sintomas vs impacto (full-bleed) -->
-    <section class="section-full area-problema" data-aos="fade-left">
+    <section class="section-full area-problema" data-aos="fade-up">
       <div class="section-inner">
         <h2>El costo real de la desconexion operativa</h2>
         <p>Fugas de capital ocultas en el dia a dia: informacion dispersa en varios sistemas, falta de estandarizacion de procesos y reportes hechos a mano. El resultado son decisiones basadas en intuicion, perdida de horas-hombre y reaccion tardia ante caidas de rentabilidad.</p>
         <figure class="media-figure">
-          <img src="assets/comparativa-impacto.jpg" alt="Comparativa de sintomas de desorganizacion operativa contra su impacto financiero">
+          <img src="assets/comparativa-impacto.jpg" alt="Comparativa de sintomas de desorganizacion operativa contra su impacto financiero" loading="lazy">
           <figcaption>Sintomas mas comunes vs. impacto financiero real en la empresa.</figcaption>
         </figure>
       </div>
@@ -88,7 +103,7 @@
       <div class="section-inner">
         <h2>Como trabajamos</h2>
         <p>Nuestro enfoque se divide en 3 fases, desde el diagnostico inicial hasta el tablero de control final.</p>
-        <div class="cards-grid">
+        <div class="cards-grid-3">
           <article class="card" data-aos="fade-up">
             <h3>1. Auditoria y reingenieria</h3>
             <p>Analizamos como trabaja su equipo hoy y estandarizamos el ciclo de vida de la informacion para eliminar cuellos de botella.</p>
@@ -107,45 +122,37 @@
       </div>
     </section>
 
-    <!-- Entregable 1: seccion de servicios destacados en lista -->
-    <section class="section area-servicios" data-aos="fade-left">
-      <h2>Nuestros servicios destacados</h2>
-      <ul class="highlight-list">
-        <li>Control financiero y flujo de caja en tiempo real</li>
-        <li>Gestion de proyectos, contratos y precios</li>
-        <li>Control de logistica, stock y activos</li>
-        <li>Automatizacion con inteligencia artificial</li>
-      </ul>
-    </section>
-
     <!-- seccion nueva: diversificacion de clientes / industrias donde trabajamos -->
-    <section class="section section-tint area-industrias" data-aos="fade-up">
-      <h2>Industrias con las que trabajamos</h2>
-      <p>Ademas de los tableros de gestion, tambien desarrollamos soluciones inmersivas a medida segun el rubro del cliente.</p>
-      <div class="cards-grid">
-        <article class="card" data-aos="fade-up">
-          <figure class="media-figure">
-            <img src="assets/cliente-real-estate.jpg" alt="Living de una propiedad premium usado para recorridos virtuales inmobiliarios">
-            <figcaption>Real Estate Premium</figcaption>
-          </figure>
-          <p>Ventas globales inmersivas y control preciso de obra para desarrolladoras inmobiliarias.</p>
-        </article>
+    <!-- va full-bleed con un tinte violeta clarito, para cortar entre 2 fotos -->
+    <section class="section-full section-tint area-industrias" data-aos="fade-up">
+      <div class="section-inner">
+        <h2>Industrias con las que trabajamos</h2>
+        <p>Ademas de los tableros de gestion, tambien desarrollamos soluciones inmersivas a medida segun el rubro del cliente.</p>
+        <div class="cards-grid-3">
+          <article class="card" data-aos="fade-up">
+            <figure class="media-figure">
+              <img src="assets/cliente-real-estate.jpg" alt="Living de una propiedad premium usado para recorridos virtuales inmobiliarios" loading="lazy">
+              <figcaption>Real Estate Premium</figcaption>
+            </figure>
+            <p>Ventas globales inmersivas y control preciso de obra para desarrolladoras inmobiliarias.</p>
+          </article>
 
-        <article class="card" data-aos="fade-up" data-aos-delay="100">
-          <figure class="media-figure">
-            <img src="assets/cliente-retail.jpg" alt="Showroom de retail con vidrieras interactivas en 3D">
-            <figcaption>Retail &amp; E-commerce</figcaption>
-          </figure>
-          <p>Showrooms 3D interactivos y control exacto de inventarios para tiendas y comercios.</p>
-        </article>
+          <article class="card" data-aos="fade-up" data-aos-delay="100">
+            <figure class="media-figure">
+              <img src="assets/cliente-retail.jpg" alt="Showroom de retail con vidrieras interactivas en 3D" loading="lazy">
+              <figcaption>Retail &amp; E-commerce</figcaption>
+            </figure>
+            <p>Showrooms 3D interactivos y control exacto de inventarios para tiendas y comercios.</p>
+          </article>
 
-        <article class="card" data-aos="fade-up" data-aos-delay="200">
-          <figure class="media-figure">
-            <img src="assets/cliente-eventos.jpg" alt="Salon amplio con mesas y sillones preparado para un evento">
-            <figcaption>Eventos y Hosteleria</figcaption>
-          </figure>
-          <p>Planificacion visual de espacios y gestion centralizada de reservas para el rubro de eventos.</p>
-        </article>
+          <article class="card" data-aos="fade-up" data-aos-delay="200">
+            <figure class="media-figure">
+              <img src="assets/cliente-eventos.jpg" alt="Salon amplio con mesas y sillones preparado para un evento" loading="lazy">
+              <figcaption>Eventos y Hosteleria</figcaption>
+            </figure>
+            <p>Planificacion visual de espacios y gestion centralizada de reservas para el rubro de eventos.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -153,7 +160,7 @@
     <section class="section area-trabajo" data-aos="fade-up">
       <h2>Nuestro trabajo</h2>
       <figure class="media-figure">
-        <img src="assets/dashboard-financiero.jpg" alt="Tablero de control financiero en pantalla curva mostrando graficos de rentabilidad">
+        <img src="assets/dashboard-financiero.jpg" alt="Tablero de control financiero en pantalla curva mostrando graficos de rentabilidad" loading="lazy">
         <figcaption>Ejemplo de dashboard financiero desarrollado a medida para uno de nuestros clientes.</figcaption>
       </figure>
 
@@ -161,13 +168,13 @@
       <div id="galeriaTrabajo" class="carousel slide mt-4" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="assets/metodologia.jpg" class="d-block w-100" alt="Reunion de auditoria y reingenieria de procesos de trabajo">
+            <img src="assets/metodologia.jpg" class="d-block w-100" alt="Reunion de auditoria y reingenieria de procesos de trabajo" loading="lazy">
           </div>
           <div class="carousel-item">
-            <img src="assets/dashboard-financiero.jpg" class="d-block w-100" alt="Dashboard financiero en pantalla curva">
+            <img src="assets/dashboard-financiero.jpg" class="d-block w-100" alt="Dashboard financiero en pantalla curva" loading="lazy">
           </div>
           <div class="carousel-item">
-            <img src="assets/mendoza.jpg" class="d-block w-100" alt="Vista de Mendoza, sede de M&amp;G Studio 360">
+            <img src="assets/mendoza.jpg" class="d-block w-100" alt="Vista de Mendoza, sede de M&amp;G Studio 360" loading="lazy">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#galeriaTrabajo" data-bs-slide="prev">
@@ -180,15 +187,29 @@
         </button>
       </div>
     </section>
+
+    <!-- franja de cierre con el link a contacto -->
+    <section class="section-full cta-band area-cierre" data-aos="fade-up">
+      <div class="section-inner">
+        <h2>Charlemos sobre su negocio</h2>
+        <p>Una primera reunion de diagnostico, sin cargo, para ver que se puede ordenar y medir en su empresa.</p>
+        <a class="btn btn-claro" href="pages/contacto.html">Coordinar una charla</a>
+      </div>
+    </section>
   </main>
 
   <!-- Entregable 1: footer con copyright y redes -->
   <footer class="site-footer">
-    <p>&copy; 2026 M&amp;G Studio 360. Todos los derechos reservados.</p>
-    <ul class="social-list">
-      <li><a href="https://www.linkedin.com/in/federico-mastrascusa-a8b022154/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://wa.me/5492615087856" target="_blank">WhatsApp</a></li>
-    </ul>
+    <div class="footer-inner">
+      <div class="footer-texto">
+        <p>&copy; 2026 M&amp;G Studio 360. Todos los derechos reservados.</p>
+        <p class="footer-bajada">Consultoria y desarrollo de software a medida - Mendoza, Argentina.</p>
+      </div>
+      <ul class="social-list">
+        <li><a href="https://www.linkedin.com/in/federico-mastrascusa-a8b022154/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://wa.me/5492615087856" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
   </footer>
 
   <!-- Entregable 5: bootstrap JS bundle (trae popper) -->

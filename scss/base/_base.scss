@@ -15,8 +15,8 @@ body {
   font-family: $fuente-cuerpo;
   color: $color-texto;
   line-height: 1.6;
-  // Entregable X (mejora visual): fondo con degrade sutil en vez de color plano,
-  // fijo para que no se mueva al scrollear
+  // fondo con degrade sutil en vez de color plano, fijo para que no
+  // se mueva al scrollear
   background-color: $color-fondo;
   background-image:
     radial-gradient(circle at 15% 10%, rgba($color-primario, 0.06), transparent 45%),
@@ -29,27 +29,44 @@ a {
   text-decoration: none;
 }
 
+// foco visible en cualquier cosa que se pueda tabular (los links del
+// footer y del contenido no tenian nada)
+a:focus-visible {
+  outline: 2px solid $color-primario;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 // Entregable 4: CSS Grid + Media Queries (Mobile First)
 .page-grid {
   display: grid;
   grid-template-areas:
     "hero"
     "quienes"
+    "servicios"
     "problema"
     "alcance"
-    "servicios"
     "industrias"
-    "trabajo";
-  gap: 1rem;
+    "trabajo"
+    "cierre";
+  // el aire entre secciones ya lo pone el padding de cada una, si
+  // ademas pongo gap queda un hueco doble
+  gap: 0;
 }
 
 .area-hero       { grid-area: hero; }
 .area-quienes    { grid-area: quienes; }
+.area-servicios  { grid-area: servicios; }
 .area-problema   { grid-area: problema; }
 .area-alcance    { grid-area: alcance; }
-.area-servicios  { grid-area: servicios; }
 .area-industrias { grid-area: industrias; }
 .area-trabajo    { grid-area: trabajo; }
+.area-cierre     { grid-area: cierre; }
+
+// las paginas internas no arman grilla en el main, solo apilan
+.page-main {
+  display: block;
+}
 
 .team-grid {
   display: grid;
@@ -58,7 +75,7 @@ a {
     "federico"
     "eugenio"
     "agostino";
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .area-titulo    { grid-area: titulo; }
@@ -68,87 +85,102 @@ a {
 
 @media (min-width: 1024px) {
   .page-grid {
-    grid-template-areas:
-      "hero hero"
-      "quienes problema"
-      "alcance alcance"
-      "servicios industrias"
-      "trabajo trabajo";
     grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hero       hero"
+      "quienes    servicios"
+      "problema   problema"
+      "alcance    alcance"
+      "industrias industrias"
+      "trabajo    trabajo"
+      "cierre     cierre";
   }
 
   .team-grid {
-    grid-template-areas: "titulo titulo titulo" "federico eugenio agostino";
+    grid-template-areas:
+      "titulo   titulo  titulo"
+      "federico eugenio agostino";
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 // Entregable 3: espaciado con box model
-// (mucho mas aire vertical, estilo minimal, las secciones respiran mas)
+// (mucho aire vertical, las secciones respiran)
 .section {
-  max-width: 1100px;
-  margin: 0 auto 1.5rem auto;
-  padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+  // el width 100% es clave: como el section es item del grid y tiene
+  // margin auto, sin esto se achica al ancho de su contenido
+  width: 100%;
+  max-width: $ancho-seccion;
+  margin: 0 auto;
+  padding: $padding-seccion $padding-lateral;
+}
+
+// las 2 secciones que van una al lado de la otra se pegan al centro (una
+// a la derecha de su celda y la otra a la izquierda) para quedar alineadas
+// con la franja de las secciones que ocupan todo el ancho.
+// va despues de .section porque sino le gana el margin auto de arriba
+@media (min-width: 1024px) {
+  .area-quienes,
+  .area-servicios {
+    max-width: $ancho-columna;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .area-quienes {
+    justify-self: end;
+  }
+
+  .area-servicios {
+    justify-self: start;
+  }
 }
 
 // secciones "full-bleed" (foto/color a todo el ancho de la pantalla,
-// con el contenido centrado adentro en una franja de 1100px) - asi
-// se arma ese efecto de landing prolija
+// con el contenido centrado adentro en la franja de 1100px)
 .section-full,
 .hero-full {
   width: 100%;
-  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+  padding: $padding-seccion-full $padding-lateral;
 }
 
 .hero-full {
-  min-height: 70vh;
+  min-height: 55vh;
   display: flex;
   align-items: center;
 }
 
 .section-inner {
-  max-width: 1100px;
+  width: 100%;
+  max-width: $ancho-contenido;
   margin: 0 auto;
 }
 
 // fotos de Mendoza de fondo (mza, potrerillos y tupungato), donde nacio
 // el emprendimiento. uso el mixin fondo-imagen para no repetir el mismo
-// bloque 3 veces
+// bloque en cada seccion
 .hero-full {
-  @include fondo-imagen('../assets/mendoza-tupungato.jpg', rgba(255, 255, 255, 0.8));
+  @include fondo-imagen('../assets/mendoza-tupungato.jpg', rgba(255, 255, 255, 0.88));
 }
 
-.area-problema {
-  @include fondo-imagen('../assets/mendoza.jpg', rgba(255, 255, 255, 0.85));
+.area-problema,
+.fondo-mza {
+  @include fondo-imagen('../assets/mendoza.jpg', rgba(255, 255, 255, 0.88));
 }
 
-.area-alcance {
-  @include fondo-imagen('../assets/mendoza-potrerillos.jpg', rgba(255, 255, 255, 0.85));
+.area-alcance,
+.fondo-potrerillos {
+  @include fondo-imagen('../assets/mendoza-potrerillos.jpg', rgba(255, 255, 255, 0.88));
 }
 
-// Entregable 9 (contraste): con foto de fondo, el texto secundario en gris
-// clarito puede no llegar al contraste minimo si la foto tiene zonas
-// oscuras. Uso el color de texto fuerte para no arriesgar
-.hero-full p,
-.section-full p {
-  color: $color-texto;
-}
-
-// fondo semi-transparente para separar secciones sin usar otro color solido
+// fondo semi-transparente para separar secciones sin meter otro color solido
 .section-tint {
-  background-color: rgba($color-primario, 0.05);
-  border-radius: $radio-borde;
+  background-color: rgba($color-primario, 0.06);
 }
 
 // el hero va centrado, asi queda mas prolijo
 .hero-full .section-inner {
   text-align: center;
-}
-
-.hero-banner {
-  max-width: 420px;
-  margin: 0 auto 2rem auto;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .hero-full p {
@@ -162,40 +194,121 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 
+// listado de servicios: le saco el bullet redondo por defecto y le pongo
+// una marca propia, queda mas cuidado que la lista pelada
 .highlight-list {
-  padding-left: 1.2rem;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
 
   li {
-    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 2rem;
+    color: $color-texto;
+  }
+
+  li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    background-color: $color-primario;
   }
 }
 
-// Entregable 8: pagina de contacto responsive (columna en mobile, 2
-// columnas desde escritorio) para que las 5 paginas tengan su propio
-// breakpoint, no solo index y sobre-mi
+// franja de cierre con el llamado a contacto (va al final de las paginas)
+.cta-band {
+  background-color: $color-secundario;
+  text-align: center;
+
+  h2 {
+    color: $color-blanco;
+  }
+
+  p {
+    color: $color-texto-claro;
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    margin-top: 1.75rem;
+  }
+}
+
+// Entregable 8: pagina de contacto responsive (una columna en mobile, el
+// formulario mas ancho que los datos desde escritorio)
 .contacto-flex {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 
   @media (min-width: 1024px) {
     flex-direction: row;
     align-items: flex-start;
+    gap: 3.5rem;
   }
 }
 
-.contacto-form-col,
+.contacto-form-col {
+  flex: 1.4;
+}
+
 .contacto-info-col {
   flex: 1;
+}
+
+// la foto de mendoza es vertical y hacia la columna larguisima, la recorto
+.contacto-info-col .media-figure img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+// lista de datos de contacto: sin bullets, cada item con su etiqueta arriba
+.datos-lista {
+  list-style: none;
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+
+  li {
+    border-left: 3px solid rgba($color-primario, 0.4);
+    padding-left: 1rem;
+  }
+
+  a {
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.dato-label {
+  display: block;
+  font-family: $fuente-titulos;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-texto-suave;
+  margin-bottom: 0.15rem;
 }
 
 .media-figure {
   margin: 0;
 
   img {
+    width: 100%;
     max-width: 100%;
     border-radius: $radio-borde;
     display: block;
@@ -204,6 +317,37 @@ a {
   figcaption {
     font-size: 0.85rem;
     color: $color-texto-suave;
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
   }
+}
+
+// Entregable 9 (contraste): arriba de una foto no me puedo confiar del
+// gris clarito, en las zonas oscuras de la imagen no llega a 4.5:1.
+// Sobre foto va siempre el texto fuerte. Va al final del archivo para
+// que le gane al gris de .media-figure figcaption
+.hero-full,
+.area-problema,
+.area-alcance,
+.fondo-mza,
+.fondo-potrerillos {
+  p,
+  .media-figure figcaption {
+    color: $color-texto;
+  }
+
+  // las cards tienen fondo propio, ahi el gris vuelve a andar bien
+  .card p,
+  .card .media-figure figcaption {
+    color: $color-texto-suave;
+  }
+}
+
+// el banner del hero centrado. va despues de .media-figure porque sino
+// le gana el margin 0 de ahi y queda pegado a la izquierda
+.hero-banner {
+  max-width: 520px;
+  margin: 2rem auto 0 auto;
+  border-radius: $radio-borde;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }

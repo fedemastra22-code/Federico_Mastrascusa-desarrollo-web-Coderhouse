@@ -9,6 +9,9 @@ $color-texto-claro: #d9cff0;
 $color-texto-suave: #6c6480;
 $color-fondo: #f6f4fb;
 $color-borde: #e3ddf2;
+$color-blanco: #ffffff;
+// velo oscuro para las flechas del carousel arriba de fotos claras
+$velo-oscuro: rgba(0, 0, 0, 0.45);
 
 $fuente-titulos: 'Poppins', sans-serif;
 $fuente-cuerpo: 'Inter', sans-serif;
@@ -16,3 +19,19 @@ $fuente-cuerpo: 'Inter', sans-serif;
 $radio-borde: 20px;
 $radio-borde-chico: 12px;
 $radio-pill: 999px;
+
+// franja de contenido: la uso en todas las secciones para que el texto
+// arranque siempre en la misma linea vertical
+$ancho-contenido: 1100px;
+$padding-lateral: 24px;
+// 1100 de contenido + los 24 de padding de cada lado
+$ancho-seccion: 1148px;
+// la mitad justa de $ancho-seccion, para las filas de 2 columnas
+$ancho-columna: 574px;
+
+// aire vertical de las secciones (asi no lo escribo suelto en cada una)
+$padding-seccion: clamp(3rem, 5.5vw, 4.5rem);
+$padding-seccion-full: clamp(4rem, 7vw, 6rem);
+
+$sombra-card: 0 4px 20px rgba(0, 0, 0, 0.06);
+$sombra-card-hover: 0 16px 32px rgba($color-primario, 0.15);
