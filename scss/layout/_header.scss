@@ -1,60 +1,27 @@
 @use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
-
-// la barra queda pegada arriba al scrollear, por eso el fondo con blur
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
 
 // navbar tipo "vidrio esmerilado"
 .site-header .navbar {
-  background-color: rgba($color-secundario, 0.88);
+  background-color: rgba($color-secundario, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 0.85rem 0;
+  padding: 1rem 0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-}
-
-// el container de bootstrap con el mismo ancho que el resto del sitio
-.site-header .navbar > .container {
-  max-width: $ancho-contenido;
 }
 
 .logo {
   font-family: $fuente-titulos;
   font-weight: 700;
-  color: $color-blanco;
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  @include transicion(opacity);
-
-  &:hover,
-  &:focus {
-    color: $color-blanco;
-    opacity: 0.85;
-  }
 }
 
 .logo-img {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background-color: rgba($color-blanco, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 3px;
-}
-
-// el boton hamburguesa con el mismo redondeo pill del resto
-.site-header .navbar-toggler {
-  border-color: rgba($color-blanco, 0.35);
-  border-radius: $radio-borde-chico;
-  padding: 0.35rem 0.6rem;
-
-  &:focus {
-    outline: 2px solid $color-acento;
-    outline-offset: 2px;
-    box-shadow: none;
-  }
 }

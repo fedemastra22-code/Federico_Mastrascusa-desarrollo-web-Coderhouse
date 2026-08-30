@@ -2,71 +2,18 @@
 @use '../utilities/mixins' as *;
 
 // tarjetas mas redondeadas y sin borde marcado, solo sombra suave
-// (mas limpio que un recuadro con borde)
+// (mas limpio que un recuadro con borde marcado)
 .card {
-  background-color: rgba($color-blanco, 0.95);
+  background-color: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: $radio-borde;
   padding: 28px;
-  // el hueco entre cards lo pone el gap de la grilla, aca no va margen
-  margin-bottom: 0;
-  box-shadow: $sombra-card;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   @include transicion(transform, 0.25s);
 
   &:hover {
     transform: translateY(-6px);
-    box-shadow: $sombra-card-hover;
+    box-shadow: 0 16px 32px rgba($color-primario, 0.15);
   }
-
-  // el titulo de la card queda pegado arriba y el texto abajo, asi
-  // aunque una card tenga mas texto las de al lado no se desalinean
-  .media-figure {
-    margin-bottom: 1rem;
-  }
-
-  h3 + .media-figure {
-    margin-top: 0.25rem;
-  }
-}
-
-// todas las fotos de las cards con la misma proporcion, sino cada card
-// queda de un alto distinto y la grilla se ve despareja
-.card .media-figure img {
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-}
-
-// las fotos del equipo son casi cuadradas, si les aplico el 16/10 les
-// corta la cabeza. las dejo cuadradas y encuadradas desde arriba
-.team-grid .card .media-figure img {
-  aspect-ratio: 1 / 1;
-  object-position: top center;
-}
-
-// ajustes al carousel de bootstrap: alto parejo y bordes redondeados
-// como el resto de las imagenes
-.carousel {
-  border-radius: $radio-borde;
-  overflow: hidden;
-  box-shadow: $sombra-card;
-}
-
-.carousel-item img {
-  height: clamp(240px, 42vw, 460px);
-  object-fit: cover;
-}
-
-// las flechas del carousel son blancas y sobre una foto clara no se
-// veian, les pongo un degrade oscuro atras
-.carousel-control-prev,
-.carousel-control-next {
-  width: 12%;
-}
-
-.carousel-control-prev {
-  background-image: linear-gradient(to right, $velo-oscuro, transparent);
-}
-
-.carousel-control-next {
-  background-image: linear-gradient(to left, $velo-oscuro, transparent);
 }

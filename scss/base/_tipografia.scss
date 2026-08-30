@@ -8,8 +8,6 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
   line-height: 1.1;
   color: $color-secundario;
-  // evita que quede una palabra sola colgando en la ultima linea
-  text-wrap: balance;
 }
 
 h1 {
@@ -19,36 +17,18 @@ h1 {
 
 h2 {
   font-size: clamp(1.8rem, 3vw + 1rem, 2.75rem);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
   font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem);
   letter-spacing: -0.01em;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
   font-size: clamp(1rem, 0.4vw + 0.95rem, 1.15rem);
   font-weight: 400;
   color: $color-texto-suave;
-  margin-bottom: 1rem;
-}
-
-// el ultimo parrafo de un bloque no necesita margen abajo, sino
-// queda un hueco raro dentro de las cards
-p:last-child {
-  margin-bottom: 0;
-}
-
-// una linea muy larga cansa de leer, la corto a ~70 caracteres
-.section > p,
-.section-inner > p {
-  max-width: 70ch;
-}
-
-// texto chico de apoyo (epigrafes, etiquetas de los datos de contacto)
-.texto-chico {
-  font-size: 0.85rem;
-  color: $color-texto-suave;
+  margin-bottom: 0.5rem;
 }
