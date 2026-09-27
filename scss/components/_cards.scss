@@ -70,10 +70,8 @@
     width: 2.8rem;
     height: 2.8rem;
     border-radius: 50%;
-    background-color: rgba($color-primario, 0.55);
+    background-color: rgba($color-primario, 0.85);
     border: 2px solid rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
     background-size: 42%;
   }
 }
