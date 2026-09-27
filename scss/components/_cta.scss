@@ -1,0 +1,30 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// franja de cierre: fondo oscuro para cortar con el resto de la pagina
+.cierre {
+  // franja con foto de fondo y un degrade oscuro encima para que se lea
+  background-image:
+    linear-gradient(160deg, rgba(13, 13, 13, 0.9), rgba(31, 41, 55, 0.82)),
+    url('../assets/mendoza-potrerillos.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  h2 {
+    color: $color-blanco;
+  }
+
+  p {
+    color: $color-texto-claro;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // sobre el fondo oscuro el boton con borde va en claro
+  .btn-secundario {
+    color: $color-blanco;
+    border-color: $color-acento;
+  }
+}

@@ -1,6 +1,6 @@
-# M&G Studio 360 - Proyecto Final Desarrollo Web
+# FaMAS analytics.IA - Proyecto Final Desarrollo Web
 
-Sitio web tipo landing/portfolio para M&G Studio 360, un estudio de consultoria
+Sitio web tipo landing/portfolio para FaMAS analytics.IA, un estudio de consultoria
 y desarrollo de software a medida. Proyecto realizado como entregable del curso
 de Desarrollo Web Flex.
 
@@ -10,6 +10,7 @@ de Desarrollo Web Flex.
 - HTML5 semantico
 - CSS3 / SCSS (Sass)
 - Bootstrap 5 (navbar y carousel)
+- AOS (animaciones al hacer scroll)
 - Google Fonts (Poppins + Inter)
 
 ## Paginas
@@ -21,13 +22,19 @@ de Desarrollo Web Flex.
 
 ## Estructura del proyecto
 ```
-mg-studio-360/
+FaMAS-studio-360/
 ├── index.html
 ├── pages/
 │   ├── sobre-mi.html
 │   ├── servicios.html
 │   ├── proyectos.html
 │   └── contacto.html
+├── scss/
+│   ├── main.scss
+│   ├── utilities/
+│   ├── base/
+│   ├── layout/
+│   └── components/
 ├── styles/
 │   └── styles.css
 ├── assets/
@@ -35,6 +42,6 @@ mg-studio-360/
 ```
 
 ## Sitio desplegado
-https://TU-USUARIO.github.io/mg-studio-360/
+https://fedemastra22-code.github.io/Federico_Mastrascusa-desarrollo-web-Coderhouse/
 
 (reemplazar por el link real una vez publicado con GitHub Pages)

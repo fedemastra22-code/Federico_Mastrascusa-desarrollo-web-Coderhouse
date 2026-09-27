@@ -1,0 +1,35 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// accordion de bootstrap con los colores del sitio
+.faq-lista {
+  .accordion-item {
+    border: 1px solid $color-borde;
+    border-radius: $radio-borde-chico;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+
+  .accordion-button {
+    font-family: $fuente-titulos;
+    font-weight: 600;
+    color: $color-texto;
+    background-color: $color-blanco;
+    @include transicion(background-color);
+
+    &:not(.collapsed) {
+      color: $color-primario-activo;
+      background-color: rgba($color-primario, 0.08);
+    }
+
+    &:focus {
+      outline: 2px solid $color-primario-activo;
+      outline-offset: -2px;
+      box-shadow: none;
+    }
+  }
+
+  .accordion-body p {
+    margin: 0;
+  }
+}

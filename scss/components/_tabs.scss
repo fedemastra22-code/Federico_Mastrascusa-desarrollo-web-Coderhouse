@@ -1,0 +1,49 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// tabs de bootstrap con la paleta propia
+.tabs-servicios {
+  border-bottom: 2px solid $color-borde;
+  gap: 0.25rem;
+
+  .nav-link {
+    color: $color-texto-suave;
+    font-weight: 600;
+    border: none;
+    border-radius: $radio-borde-chico $radio-borde-chico 0 0;
+    @include transicion(color);
+
+    &:hover {
+      color: $color-primario;
+      background-color: rgba($color-primario, 0.08);
+    }
+
+    &.active {
+      color: $color-primario-activo;
+      background-color: $color-blanco;
+      border-bottom: 3px solid $color-acento-oscuro;
+    }
+  }
+}
+
+.paneles-servicios {
+  @include panel(rgba(255, 255, 255, 0.9));
+  padding: 28px;
+  margin-top: 1.5rem;
+
+  // alto minimo fijo asi el panel no cambia de tamaño al pasar de un tab a otro
+  // (el texto mas largo es el de proyectos, el resto rellena hasta este alto)
+  min-height: 235px;
+
+  @media (min-width: 768px) {
+    min-height: 195px;
+  }
+
+  @media (min-width: 992px) {
+    min-height: 165px;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+}

@@ -3,8 +3,9 @@
 
 // boton estilo pildora
 .btn {
-  background-color: $color-primario;
-  color: #ffffff;
+  // degrade suave entre los dos verdes de la paleta
+  background-image: linear-gradient(135deg, $color-primario-suave, $color-primario);
+  color: $color-blanco;
   border: none;
   padding: 0.85rem 2rem;
   border-radius: $radio-pill;
@@ -15,16 +16,45 @@
   @include transicion(background-color);
 
   &:hover {
-    background-color: $color-primario-oscuro;
+    background-image: linear-gradient(135deg, $color-primario, $color-primario-oscuro);
   }
 
   &:focus {
-    outline: 2px solid $color-acento;
+    // el acento sobre fondo claro no llegaba a 3:1, uso el primario activo
+    outline: 2px solid $color-primario-activo;
     outline-offset: 2px;
   }
 
   &:active {
-    background-color: $color-primario-activo;
+    background-image: linear-gradient(135deg, $color-primario-oscuro, $color-primario-activo);
     transform: scale(0.98);
   }
+}
+
+// variante secundaria: mismo tamaño pero con borde en vez de relleno
+.btn-secundario {
+  background-image: none;
+  background-color: transparent;
+  color: $color-primario-activo;
+  border: 2px solid $color-primario;
+
+  &:hover {
+    background-color: rgba($color-primario, 0.1);
+  }
+}
+
+// sobre las secciones oscuras el boton con borde va con texto claro
+.seccion-oscura .btn-secundario {
+  color: $color-blanco;
+  border-color: $color-acento;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+// los <a> con clase btn necesitan comportarse como bloque
+a.btn {
+  display: inline-block;
+  text-decoration: none;
 }

@@ -15,13 +15,17 @@ body {
   font-family: $fuente-cuerpo;
   color: $color-texto;
   line-height: 1.6;
-  // Entregable X (mejora visual): fondo con degrade sutil en vez de color plano,
+  // mejora visual: fondo con degrade sutil en vez de color plano,
   // fijo para que no se mueva al scrollear
   background-color: $color-fondo;
+  // degrade suave entre grises claros, arriba de la textura
   background-image:
-    radial-gradient(circle at 15% 10%, rgba($color-primario, 0.06), transparent 45%),
-    radial-gradient(circle at 85% 30%, rgba($color-acento, 0.08), transparent 40%);
-  background-attachment: fixed;
+    linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(243, 244, 246, 0.72)),
+    url('../assets/textura-lino.jpg');
+  background-repeat: no-repeat, repeat;
+  background-size: auto, 320px 320px;
+  // en mobile el fixed de la textura tira raro, va scroll normal
+  background-attachment: fixed, scroll;
 }
 
 a {
@@ -34,52 +38,79 @@ a {
   display: grid;
   grid-template-areas:
     "hero"
-    "quienes"
     "problema"
-    "alcance"
+    "fases"
     "servicios"
     "industrias"
-    "trabajo";
+    "trabajo"
+    "galeria"
+    "faq"
+    "quienes"
+    "cierre";
   gap: 1rem;
 }
 
 .area-hero       { grid-area: hero; }
-.area-quienes    { grid-area: quienes; }
 .area-problema   { grid-area: problema; }
-.area-alcance    { grid-area: alcance; }
+.area-fases      { grid-area: fases; }
 .area-servicios  { grid-area: servicios; }
 .area-industrias { grid-area: industrias; }
 .area-trabajo    { grid-area: trabajo; }
+.area-galeria    { grid-area: galeria; }
+.area-faq        { grid-area: faq; }
+.area-quienes    { grid-area: quienes; }
+.area-cierre     { grid-area: cierre; }
 
 .team-grid {
   display: grid;
   grid-template-areas:
     "titulo"
     "federico"
-    "eugenio"
-    "agostino";
+    "francisco"
+    "agostino"
+    "cobos";
   gap: 1rem;
 }
 
 .area-titulo    { grid-area: titulo; }
 .area-federico  { grid-area: federico; }
-.area-eugenio   { grid-area: eugenio; }
+.area-francisco { grid-area: francisco; }
 .area-agostino  { grid-area: agostino; }
+.area-cobos     { grid-area: cobos; }
+
+// paso intermedio: en tablet el equipo va de a 2 y recien en escritorio en 1 fila
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-areas:
+      "titulo titulo"
+      "federico francisco"
+      "agostino cobos";
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (min-width: 1024px) {
+  // en escritorio el layout sigue en una sola columna: cada seccion
+  // ocupa todo el ancho, la variedad la dan los fondos
   .page-grid {
     grid-template-areas:
-      "hero hero"
-      "quienes problema"
-      "alcance alcance"
-      "servicios industrias"
-      "trabajo trabajo";
-    grid-template-columns: 1fr 1fr;
+      "hero"
+      "problema"
+      "fases"
+      "servicios"
+      "industrias"
+      "trabajo"
+      "faq"
+      "quienes"
+      "cierre";
   }
 
+  // en escritorio los 4 integrantes van en una sola fila
   .team-grid {
-    grid-template-areas: "titulo titulo titulo" "federico eugenio agostino";
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "titulo titulo titulo titulo"
+      "federico francisco agostino cobos";
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -91,19 +122,11 @@ a {
   padding: clamp(3rem, 6vw, 5rem) 1.5rem;
 }
 
-// secciones "full-bleed" (foto/color a todo el ancho de la pantalla,
-// con el contenido centrado adentro en una franja de 1100px) - asi
-// se arma ese efecto de landing prolija
+// secciones a todo el ancho, con el contenido centrado en una franja
 .section-full,
 .hero-full {
   width: 100%;
   padding: clamp(4rem, 8vw, 7rem) 1.5rem;
-}
-
-.hero-full {
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
 }
 
 .section-inner {
@@ -111,48 +134,42 @@ a {
   margin: 0 auto;
 }
 
-// fotos de Mendoza de fondo (mza, potrerillos y tupungato), donde nacio
-// el emprendimiento. uso el mixin fondo-imagen para no repetir el mismo
-// bloque 3 veces
-.hero-full {
-  @include fondo-imagen('../assets/mendoza-tupungato.jpg', rgba(255, 255, 255, 0.8));
-}
-
-.area-problema {
-  @include fondo-imagen('../assets/mendoza.jpg', rgba(255, 255, 255, 0.85));
-}
-
-.area-alcance {
-  @include fondo-imagen('../assets/mendoza-potrerillos.jpg', rgba(255, 255, 255, 0.85));
-}
-
-// Entregable 9 (contraste): con foto de fondo, el texto secundario en gris
-// clarito puede no llegar al contraste minimo si la foto tiene zonas
-// oscuras. Uso el color de texto fuerte para no arriesgar
-.hero-full p,
-.section-full p {
-  color: $color-texto;
-}
-
-// fondo semi-transparente para separar secciones sin usar otro color solido
-.section-tint {
-  background-color: rgba($color-primario, 0.05);
-  border-radius: $radio-borde;
-}
-
-// el hero va centrado, asi queda mas prolijo
-.hero-full .section-inner {
+// -- secciones oscuras: foto de fondo con velo oscuro y texto blanco --
+.seccion-oscura {
+  color: $color-blanco;
   text-align: center;
+
+  h1,
+  h2,
+  h3 {
+    color: $color-blanco;
+  }
+
+  p {
+    color: $color-texto-claro;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .alterno-antetitulo {
+    color: $color-acento;
+  }
 }
 
-.hero-banner {
-  max-width: 420px;
-  margin: 0 auto 2rem auto;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+// el hero es la primera seccion oscura, arranca alto
+.hero-full {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  @include fondo-oscuro('../assets/mendoza-potrerillos.jpg');
 }
 
-.hero-full p {
-  max-width: 640px;
+
+
+// el hero va centrado y el titulo con un ancho comodo
+.hero-full .hero-title {
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -206,4 +223,135 @@ a {
     color: $color-texto-suave;
     margin-top: 0.5rem;
   }
+}
+
+// el logo de contacto (svg vertical) se estiraba a todo el ancho, lo limito
+.contacto-info-col .media-figure img {
+  max-width: 220px;
+}
+
+// botones del hero y del cierre, en fila desde tablet
+.hero-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+// bloques alternados: una columna con texto y otra con la foto, que se
+// van turnando de lado a medida que bajas
+.bloque-alterno {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem auto;
+  padding: clamp(2rem, 5vw, 4rem) 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.alterno-texto {
+  @include panel(rgba(255, 255, 255, 0.92));
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+// el antetitulo chiquito arriba del h2
+.alterno-antetitulo {
+  // verde oscuro, el toque de verde de la paleta
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $color-acento-oscuro;
+  margin-bottom: 0.5rem;
+}
+
+// en "nuestro trabajo" el texto va directo sobre el fondo, sin recuadro blanco
+.area-trabajo .alterno-texto {
+  background-color: transparent;
+  box-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.alterno-img img {
+  width: 100%;
+  border-radius: $radio-borde;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+// lista de pasos con la numeracion propia del ol
+.pasos-lista {
+  padding-left: 1.25rem;
+
+  li {
+    margin-bottom: 1.25rem;
+  }
+
+  h3 {
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+// columna de texto de la seccion clientes (con las tarjetas de rubros)
+.clientes-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card-mini {
+  @include panel(rgba(255, 255, 255, 0.92));
+  padding: 18px 22px;
+  @include transicion(transform, 0.2s);
+
+  h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.05rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    transform: translateX(4px);
+  }
+}
+
+// banner horizontal de la seccion servicios (foto de fondo recortada)
+.servicios-banner {
+  background-image: url('../assets/fondo2.jpg');
+  background-size: cover;
+  background-position: center;
+  height: clamp(150px, 22vw, 250px);
+  border-radius: $radio-borde;
+  margin: 1.25rem 0 0.5rem 0;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  opacity: 0.8;
+}
+
+// pie de texto debajo de la galeria de tableros
+.pie-galeria {
+  text-align: center;
+  color: $color-texto-suave;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+// imagenes de fondo decorativas con la opacidad un poco mas baja
+.fondo-suave {
+  opacity: 0.8;
 }

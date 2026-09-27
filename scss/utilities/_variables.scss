@@ -1,18 +1,32 @@
+@use 'sass:math';
 // Entregable 7: variables reutilizables de la paleta y tipografia
-$color-primario: #5b3a99;
-$color-primario-oscuro: #472c78;
-$color-primario-activo: #362060;
-$color-secundario: #1f1435;
-$color-acento: #8b6fd1;
-$color-texto: #2c2438;
-$color-texto-claro: #d9cff0;
-$color-texto-suave: #6c6480;
-$color-fondo: #f6f4fb;
-$color-borde: #e3ddf2;
+// paleta del sitio: negro, blanco, verde y gris
+$color-primario: #166534;
+$color-primario-oscuro: #12592c;
+$color-primario-activo: #0f4d26;
+$color-secundario: #0d0d0d;
+$color-acento: #4ade80;
+$color-acento-oscuro: #166534;
+$color-texto: #111111;
+$color-texto-claro: #e5e7eb;
+$color-texto-suave: #5b6472;
+$color-fondo: #ffffff;
+$color-borde: #e5e7eb;
+$color-gris: #6b7280;
+$color-primario-suave: #1c7a3f;
+$color-blanco: #ffffff;
 
-$fuente-titulos: 'Poppins', sans-serif;
+$fuente-titulos: 'Montserrat', sans-serif;
 $fuente-cuerpo: 'Inter', sans-serif;
+// fuentes del logo (igual que el png original)
+$fuente-logo: 'Montserrat', sans-serif;
+$fuente-logo-cursiva: 'Playfair Display', serif;
 
 $radio-borde: 20px;
 $radio-borde-chico: 12px;
+
+// escala de espaciado calculada con matematica de sass (funcion y operador)
+$espaciado: 1rem;
+$espaciado-sm: math.div($espaciado, 2);
+$espaciado-lg: $espaciado * 1.5;
 $radio-pill: 999px;

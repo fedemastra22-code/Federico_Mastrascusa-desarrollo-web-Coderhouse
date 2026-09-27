@@ -17,3 +17,63 @@
     box-shadow: 0 16px 32px rgba($color-primario, 0.15);
   }
 }
+
+// las fotos del equipo ya estan recortadas cuadradas, aca solo les doy
+// el mismo tamaño y el borde redondo
+.team-grid {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  // el figcaption es mas ancho que la foto, sin el margin auto la imagen
+  // quedaba pegada a la izquierda
+  .media-figure {
+    width: 100%;
+  }
+
+  .media-figure img {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid rgba($color-primario-suave, 0.35);
+  }
+
+  figcaption {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  h3 {
+    min-height: 3rem;
+  }
+}
+
+// galerias (proyectos y tableros): contenedor un poco mas chico y controles verde semi-glass
+#galeriaProyectos,
+#galeriaTableros {
+  max-width: 820px;
+  margin: 0 auto;
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 3.5rem;
+    opacity: 1;
+  }
+
+  // botones de slide: circulo verde translucido con el borde y la flecha blancos
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    background-color: rgba($color-primario, 0.55);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background-size: 42%;
+  }
+}

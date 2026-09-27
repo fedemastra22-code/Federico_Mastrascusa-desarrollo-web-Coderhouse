@@ -10,7 +10,7 @@
   padding: 0.5rem 1rem;
 
   &:hover {
-    color: #ffffff;
+    color: $color-blanco;
     background-color: rgba($color-acento, 0.15);
   }
 
@@ -20,7 +20,7 @@
   }
 
   &:active {
-    color: #ffffff;
+    color: $color-blanco;
     background-color: rgba($color-acento, 0.3);
   }
 }
